@@ -1,34 +1,30 @@
 pipeline {
     agent any
-
     tools {
-        jdk 'jdk17'
-        maven 'MAVEN3'
+        maven "MAVEN3"
+        jdk "jdk17"
+    }
+
+    environment {
+        SNAP_REPO = 'vprofile-snapshot'
+        NEXUS_USER = 'admin'
+        NEXUS_PASS = 'admin'
+        RELEASE_REPO = 'vprofile-release'
+        CENTRAL_REPO = 'vpro-maven-central'
+        NEXUSIP = '172.31.40.26'
+        NEXUSPORT = '8081'
+        NEXUS_GRP_REPO = 'vpro-maven-group'
+        NEXUS_LOGIN = 'nexuslogin'
     }
 
     stages {
-
-        stage('fetch code') {
+        stage('Build'){
             steps {
-                git branch: 'main', url: 'https://github.com/Rocky-RS/jenkins-pipeline-peoject.git'
-            }
-        }
-
-        stage('build') {
-            steps {
-                sh 'mvn clean install'
-            }
-        }
-
-        stage('test') {
-            steps {
-                sh 'mvn test'
+                sh 'mvn -s settings.xml -DskipTests install'
             }
         }
     }
 }
-
-
 
 
 
