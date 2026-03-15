@@ -1,5 +1,25 @@
+# Maven build directory
 target/
+
+# Log files
 *.log
+
+# Compiled class files
 *.class
+
+# Packaged files
 *.jar
 *.war
+*.ear
+
+# IDE files
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
