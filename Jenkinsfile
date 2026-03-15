@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('fetch code'){
             steps{
-                git branch:'paac , '
+                        git branch: 'main', url: 'https://github.com/Rocky-RS/jenkins-pipeline-peoject.git'
             }
         }
         stage('build'){
