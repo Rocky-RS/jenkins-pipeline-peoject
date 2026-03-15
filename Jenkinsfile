@@ -1,20 +1,48 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('fetch code'){
-            steps{
-                        git branch: 'main', url: 'https://github.com/Rocky-RS/jenkins-pipeline-peoject.git'
-            }
-        }
-        stage('build'){
+
+    tools {
+        jdk 'jdk17'
+        maven 'maven3'
+    }
+
+    stages {
+
+        stage('fetch code') {
             steps {
-                sh 'mvn install'
+                git branch: 'main', url: 'https://github.com/Rocky-RS/jenkins-pipeline-peoject.git'
             }
         }
-        stage('test'){
-            steps{
+
+        stage('build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+
+        stage('test') {
+            steps {
                 sh 'mvn test'
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
