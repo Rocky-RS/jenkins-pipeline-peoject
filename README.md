@@ -1,26 +1,69 @@
-# Prerequisites
-#
-- JDK 17 or 21
-- Maven 3.9
-- MySQL 8
+# 🚀 DevOps CI Pipeline Project (vProfile)
 
-# Technologies 
-- Spring MVC
-- Spring Security
-- Spring Data JPA
-- Maven
-- JSP
-- Tomcat
-- MySQL
-- Memcached
-- Rabbitmq
-- ElasticSearch
-# Database
-Here,we used Mysql DB 
-sql dump file:
-- /src/main/resources/db_backup.sql
-- db_backup.sql file is a mysql dump file.we have to import this dump to mysql db server
-- > mysql -u <user_name> -p accounts < db_backup.sql
+## 📌 Project Overview
 
+This project demonstrates a complete CI pipeline using Jenkins, SonarQube, and Nexus on AWS EC2 instances.
 
-trigger pipeline build
+The pipeline automates code build, testing, code quality analysis, and artifact storage.
+
+---
+
+## 🧱 Architecture
+
+GitHub → Jenkins → SonarQube → Nexus
+
+---
+
+## ⚙️ Tools & Technologies
+
+* AWS EC2
+* Jenkins
+* SonarQube
+* Nexus Repository Manager
+* Maven
+* GitHub
+
+---
+
+## 🔄 Pipeline Workflow
+
+1. Developer pushes code to GitHub
+2. GitHub webhook triggers Jenkins pipeline
+3. Jenkins builds the application using Maven
+4. Unit tests are executed
+5. Code quality is analyzed using SonarQube
+6. Quality Gate validation is performed
+7. Build artifact (.war) is uploaded to Nexus
+
+---
+
+## 📦 Artifact Storage
+
+Artifacts are stored in Nexus repository:
+
+* vprofile-release
+* vprofile-snapshot
+
+---
+
+## 🔐 Key Features
+
+* Automated CI pipeline
+* Code quality enforcement
+* Artifact versioning
+* Integration with AWS infrastructure
+
+---
+
+## 🚀 Future Improvements
+
+* Add CD pipeline (Deployment using Tomcat / Docker)
+* Integrate Kubernetes
+* Add monitoring (Prometheus & Grafana)
+
+---
+
+## 👨‍💻 Author
+
+Rahul Guleria
+
