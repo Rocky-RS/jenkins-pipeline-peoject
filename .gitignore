@@ -1,25 +1,113 @@
-# Maven build directory
+# ==============================
+
+# 🚀 Maven / Java Build
+
+# ==============================
+
 target/
-
-# Log files
-*.log
-
-# Compiled class files
-*.class
-
-# Packaged files
 *.jar
 *.war
 *.ear
+*.class
 
-# IDE files
+# ==============================
+
+# 📄 Logs
+
+# ==============================
+
+*.log
+logs/
+
+# ==============================
+
+# 🧠 IDE / Editor
+
+# ==============================
+
 .idea/
 .vscode/
+*.iml
 
-# OS files
+# ==============================
+
+# 💻 OS Files
+
+# ==============================
+
 .DS_Store
 Thumbs.db
 
-# Temporary files
+# ==============================
+
+# 🔐 Secrets & Credentials (IMPORTANT)
+
+# ==============================
+
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+
+# ==============================
+
+# ⚙️ Config Files (Sensitive)
+
+# ==============================
+
+settings.xml
+application.properties
+application.yml
+config.properties
+
+# ==============================
+
+# ☁️ AWS / Cloud
+
+# ==============================
+
+.aws/
+aws-credentials
+*.tfstate
+*.tfvars
+
+# ==============================
+
+# 🐳 Docker
+
+# ==============================
+
+docker-compose.override.yml
+
+# ==============================
+
+# 📦 Temporary Files
+
+# ==============================
+
 *.tmp
 *.swp
+*.bak
+
+# ==============================
+
+# 🧪 Test / Coverage
+
+# ==============================
+
+coverage/
+*.coverage
+
+# ==============================
+
+# 📁 Misc
+
+# ==============================
+
+node_modules/
+dist/
+build/
+
